@@ -1,11 +1,7 @@
-import React from "react";
-import "./app.less"
+import React from 'react';
+import './app.less';
 const App = () => {
-    return(
-        <div className={"app"}>
-            React is Working
-        </div>
-    )
-}
+  return <div className={'app'}>React is Working</div>;
+};
 
-export default App
+export default App;
