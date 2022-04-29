@@ -2,10 +2,10 @@ var foo = 1
 console.log(foo)
 var bar
 bar = 1
-function eslintTest(
+function test(
 
 
 ) {
-    console.log(baz)
+  console.log(baz)
 }
 var baz = 123
