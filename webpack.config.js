@@ -5,56 +5,60 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 let mode = 'development';
 
 if (process.env.NODE_ENV === 'production') {
-  mode = 'production';
+    mode = 'production';
 }
 
 module.exports = {
-  mode: mode,
-  entry: ['@babel/polyfill', './src/index.jsx'],
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[hash].js',
-  },
+    mode: mode,
+    entry: ['@babel/polyfill', './src/index.jsx'],
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].[hash].js',
+    },
 
-  devServer: {
-    port: 3000,
-  },
+    devServer: {
+        port: 3000,
+    },
 
-  plugins: [
-    new HtmlWebpackPlugin({ template: './src/index.html' }),
-    new CleanWebpackPlugin(),
-  ],
-
-  module: {
-    rules: [
-      {
-        test: /\.(css|less)$/,
-        use: ['style-loader', 'css-loader', 'less-loader'],
-      },
-      {
-        test: /\.(jpg|jpeg|png|svg)/,
-        use: ['file-loader'],
-      },
-      {
-        test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-          },
-        },
-      },
-      {
-        test: /\.m?jsx$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
-          },
-        },
-      },
+    plugins: [
+        new HtmlWebpackPlugin({ template: './src/index.html' }),
+        new CleanWebpackPlugin(),
     ],
-  },
+
+    resolve: {
+        extensions: ['.js', '.jsx'],
+    },
+
+    module: {
+        rules: [
+            {
+                test: /\.(css|less)$/,
+                use: ['style-loader', 'css-loader', 'less-loader'],
+            },
+            {
+                test: /\.(jpg|jpeg|png|svg)/,
+                use: ['file-loader'],
+            },
+            {
+                test: /\.m?js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env'],
+                    },
+                },
+            },
+            {
+                test: /\.m?jsx$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env', ["@babel/preset-react", {"runtime": "automatic"}]],
+                    },
+                },
+            },
+        ],
+    },
 };

@@ -4,13 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-
     "build": "set NODE_ENV=production&&webpack",
     "dev": "set NODE_ENV=development&&webpack",
     "start": "set NODE_ENV=development&webpack-dev-server --open",
-    "lint": "./node_modules/eslint/bin/eslint.js app.js routes modules test App.js",
-    "eslint": "eslint",
-    "prettier": "prettier"
+    "lint": "eslint --ext .js,.jsx src",
+    "lint:fix": "eslint --ext .js,.jsx src/ --fix",
+    "prettier:fix": "prettier --write src/"
   },
   "repository": {
     "type": "git",
@@ -33,6 +32,8 @@
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
     "file-loader": "^6.2.0",
@@ -52,6 +53,8 @@
     "@typescript-eslint/parser": "^5.0.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react-dom": "^18.1.0",
+    "react-router": "^6.3.0",
+    "react-router-dom": "^6.3.0"
   }
 }
