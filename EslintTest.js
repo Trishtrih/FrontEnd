@@ -1,8 +1,7 @@
-const foo = 1;
-console.log(foo);
-let bar;
-bar = 1;
-function test() {
-  console.log(baz);
+const f3 = () => {
+  const name = "name";
+  return () => {
+    console.log(this.name);
+    console.log(arguments);
+  };
 }
-var baz = 123;

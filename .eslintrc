@@ -1,24 +1,28 @@
 {
-  "env": {
-    "es6": true
-  },
-  "extends": [
-    "eslint:recommended",
-    "plugin:import/errors",
-    "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended"
-  ],
-  "rules": {
-    "no-var": "error",
-    "semi": "error",
-    "indent": "error",
-    "no-multi-spaces": "error",
-    "space-in-parens": "error",
-    "no-multiple-empty-lines": "error",
-    "prefer-const": "error",
-    "no-use-before-define": "error"
-  },
-  "parserOptions": {
-    "sourceType": "module"
-  }
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react", "prettier"
+    ],
+    "rules": {
+        "semi": 0,
+        "no-plusplus": "off",
+        "class-methods-use-this": "off",
+        "comma-dangle": 0,
+        "prettier/prettier": "error",
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    }
 }
