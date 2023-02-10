@@ -46,15 +46,15 @@ const Timer = () => {
     }
   }, [timerActive]);
 
-  const hourChange = (event) => {
-    setTempHour(event.target.value || 0);
+  const hourChange = (event:any) => {
+    setTempHour(event.target.value || '0');
   };
 
-  const minuteChange = (event) => {
+  const minuteChange = (event:any) => {
     setTempMinute(event.target.value || 0);
   };
 
-  const secondChange = (event) => {
+  const secondChange = (event:any) => {
     setTempSecond(event.target.value || 0);
   };
 

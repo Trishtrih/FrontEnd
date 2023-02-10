@@ -10,7 +10,7 @@ if (process.env.NODE_ENV === 'production') {
 
 module.exports = {
   mode: mode,
-  entry: ['@babel/polyfill', './src/index.jsx'],
+  entry: ['@babel/polyfill', './src/index.tsx'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[hash].js',
@@ -19,12 +19,16 @@ module.exports = {
   devServer: {
     port: 3000,
     historyApiFallback: true,
+    client: {
+      overlay: false,
+
+    },
   },
 
   plugins: [new HtmlWebpackPlugin({ template: './src/index.html' }), new CleanWebpackPlugin()],
 
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
 
   module: {
@@ -38,24 +42,14 @@ module.exports = {
         use: ['file-loader'],
       },
       {
-        test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-          },
-        },
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: ["babel-loader"],
       },
       {
-        test: /\.m?jsx$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env', ['@babel/preset-react', { runtime: 'automatic' }]],
-          },
-        },
+        test: /\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        use: ["ts-loader"],
       },
     ],
   },
