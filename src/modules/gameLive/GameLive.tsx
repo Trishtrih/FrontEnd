@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import '../styles/GameLive.less';
+import React, { Component } from "react";
+import "../styles/GameLive.less";
 
 class GameLive extends Component {
   constructor(props) {
@@ -46,7 +46,7 @@ class GameLive extends Component {
   drawSell = () => {
     // eslint-disable-next-line react/no-string-refs
     const { canvas } = this.refs;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     const { GameField } = this.state;
     ctx.clearRect(0, 0, 300, 300);
     for (let i = 0; i < 30; i++) {
@@ -79,7 +79,8 @@ class GameLive extends Component {
       mass2[i] = [];
       for (let j = 0; j < 30; j++) {
         const neighbours = this.countNeighbours(i, j);
-        mass[i][j] = mass[i][j] === 1 ? this.alive(neighbours) : this.born(neighbours);
+        mass[i][j] =
+          mass[i][j] === 1 ? this.alive(neighbours) : this.born(neighbours);
       }
     }
 
@@ -110,16 +111,24 @@ class GameLive extends Component {
     if (mass[i][this.infiniteFieldMax(j) - 1] === 1) {
       neighbours++;
     }
-    if (mass[this.infiniteFieldMax(i) - 1][this.infiniteFieldMin(j) + 1] === 1) {
+    if (
+      mass[this.infiniteFieldMax(i) - 1][this.infiniteFieldMin(j) + 1] === 1
+    ) {
       neighbours++;
     }
-    if (mass[this.infiniteFieldMin(i) + 1][this.infiniteFieldMin(j) + 1] === 1) {
+    if (
+      mass[this.infiniteFieldMin(i) + 1][this.infiniteFieldMin(j) + 1] === 1
+    ) {
       neighbours++;
     }
-    if (mass[this.infiniteFieldMin(i) + 1][this.infiniteFieldMax(j) - 1] === 1) {
+    if (
+      mass[this.infiniteFieldMin(i) + 1][this.infiniteFieldMax(j) - 1] === 1
+    ) {
       neighbours++;
     }
-    if (mass[this.infiniteFieldMax(i) - 1][this.infiniteFieldMax(j) - 1] === 1) {
+    if (
+      mass[this.infiniteFieldMax(i) - 1][this.infiniteFieldMax(j) - 1] === 1
+    ) {
       neighbours++;
     }
 
@@ -159,9 +168,25 @@ class GameLive extends Component {
           height={fieldHeight}
         />
         <div className="GameControl">
-          <input type="range" min="300" max="700" step="10" onInput={this.changeFieldWidth} />
-          <input type="range" min="300" max="500" step="10" onInput={this.changeFieldHeight} />
-          <button type="button" className="StartSimulation" onClick={this.startStopSimulation}>
+          <input
+            type="range"
+            min="300"
+            max="700"
+            step="10"
+            onInput={this.changeFieldWidth}
+          />
+          <input
+            type="range"
+            min="300"
+            max="500"
+            step="10"
+            onInput={this.changeFieldHeight}
+          />
+          <button
+            type="button"
+            className="StartSimulation"
+            onClick={this.startStopSimulation}
+          >
             StartSimulation
           </button>
         </div>

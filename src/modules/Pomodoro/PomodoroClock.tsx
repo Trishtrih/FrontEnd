@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import "../styles/Pomodoro.css"
-import Timer from './Timer';
+import React, { Component } from "react";
+import "../styles/Pomodoro.css";
+import Timer from "./Timer";
 
 class PomodoroClock extends Component {
   render() {

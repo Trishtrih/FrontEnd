@@ -1,23 +1,23 @@
-import React from 'react';
+import React from "react";
 
 class TaskInput extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      input: '',
+      input: "",
     };
   }
 
   handleEnter = (event) => {
-    if (event.key === 'Enter') this.addTask();
+    if (event.key === "Enter") this.addTask();
   };
 
   addTask = () => {
     const { input } = this.state;
     if (input) {
       this.props.addTask(input);
-      this.setState({ input: '' });
+      this.setState({ input: "" });
     }
   };
 
@@ -28,8 +28,12 @@ class TaskInput extends React.Component {
   render() {
     const { input } = this.state;
     return (
-      <div className={'task-input'}>
-        <input onKeyPress={this.handleEnter} onChange={this.inputChange} value={input} />
+      <div className={"task-input"}>
+        <input
+          onKeyPress={this.handleEnter}
+          onChange={this.inputChange}
+          value={input}
+        />
         <button onClick={this.addTask}>ADD</button>
       </div>
     );

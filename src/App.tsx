@@ -1,11 +1,11 @@
-import React from 'react';
-import './app.less';
-import { Routes, Route, Link } from 'react-router-dom';
-import Home from './modules/Home';
-import AboutPage from './modules/AboutPage';
-import GameLive from './modules/gameLive/GameLive';
-import ToDoList from './modules/ToDoList/ToDoList';
-import PomodoroClock from './modules/Pomodoro/PomodoroClock';
+import React from "react";
+import "./app.less";
+import { Routes, Route, Link } from "react-router-dom";
+import Home from "./modules/Home";
+import AboutPage from "./modules/AboutPage";
+import GameLive from "./modules/gameLive/GameLive";
+import ToDoList from "./modules/ToDoList/ToDoList";
+import PomodoroClock from "./modules/Pomodoro/PomodoroClock";
 
 function App() {
   return (
@@ -36,7 +36,6 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/ToDo" element={<ToDoList />} />
         <Route path="/Pomodoro" element={<PomodoroClock />} />
-
       </Routes>
     </>
   );

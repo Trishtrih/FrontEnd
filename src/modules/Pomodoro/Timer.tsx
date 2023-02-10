@@ -83,16 +83,14 @@ const Timer = () => {
     inputSecondRef.current.value = "";
   };
 
-
-
-    const handleClick = () => {
+  const handleClick = () => {
     setTimerActive(!timerActive);
   };
 
   return (
     <div>
       <div className="Timers">
-          <p className="Timer">
+        <p className="Timer">
           {jobHour} : {jobMinute} : {jobSecond}
         </p>
         <p className="Timer">
