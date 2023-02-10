@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from "react";
 
 const Timer = () => {
   const [jobHour, setJobHour] = useState(0);
@@ -46,15 +46,15 @@ const Timer = () => {
     }
   }, [timerActive]);
 
-  const hourChange = (event:any) => {
-    setTempHour(event.target.value || '0');
+  const hourChange = (event: any) => {
+    setTempHour(event.target.value || "0");
   };
 
-  const minuteChange = (event:any) => {
+  const minuteChange = (event: any) => {
     setTempMinute(event.target.value || 0);
   };
 
-  const secondChange = (event:any) => {
+  const secondChange = (event: any) => {
     setTempSecond(event.target.value || 0);
   };
 
@@ -65,22 +65,25 @@ const Timer = () => {
     setTempHour(0);
     setTempMinute(0);
     setTempSecond(0);
-    inputHourRef.current.value = '';
-    inputMinuteRef.current.value = '';
-    inputSecondRef.current.value = '';
+        inputHourRef.current.value = "";
+    inputMinuteRef.current.value = "";
+    inputSecondRef.current.value = "";
   };
 
   const setRelaxTime = () => {
     setRelaxHour(tempHour);
     setRelaxMinute(tempMinute);
     setRelaxSecond(tempSecond);
+
     setTempHour(0);
     setTempMinute(0);
     setTempSecond(0);
-    inputHourRef.current.value = '';
-    inputMinuteRef.current.value = '';
-    inputSecondRef.current.value = '';
+    inputHourRef.current.value = "";
+    inputMinuteRef.current.value = "";
+    inputSecondRef.current.value = "";
   };
+
+
 
   const handleClick = () => {
     setTimerActive(!timerActive);
@@ -89,11 +92,11 @@ const Timer = () => {
   return (
     <div>
       <div className="Timers">
-        <p className="Timer">
+          <p className="Timer">
           {jobHour} : {jobMinute} : {jobSecond}
         </p>
         <p className="Timer">
-          {' '}
+          {" "}
           {relaxHour} : {relaxMinute} : {relaxSecond}
         </p>
       </div>
@@ -101,27 +104,35 @@ const Timer = () => {
       <div>
         <div className="Inputs">
           <input ref={inputHourRef} className="Input" onChange={hourChange} />
-          <input ref={inputMinuteRef} className="Input" onChange={minuteChange} />
-          <input ref={inputSecondRef} className="Input" onChange={secondChange} />
+          <input
+            ref={inputMinuteRef}
+            className="Input"
+            onChange={minuteChange}
+          />
+          <input
+            ref={inputSecondRef}
+            className="Input"
+            onChange={secondChange}
+          />
         </div>
 
         <div className="Buttons">
           <button className="Button" onClick={setJobTime}>
-            {' '}
+            {" "}
             Set Job Time
           </button>
           <button className="Button" onClick={setRelaxTime}>
-            {' '}
+            {" "}
             Set Relax Time
           </button>
           <button className="Button" onClick={handleClick}>
-            {' '}
-            {timerActive ? 'Stop' : 'Start'}
+            {" "}
+            {timerActive ? "Stop" : "Start"}
           </button>
           <button className="Button">Reset</button>
         </div>
       </div>
     </div>
   );
-}
+};
 export default Timer;
