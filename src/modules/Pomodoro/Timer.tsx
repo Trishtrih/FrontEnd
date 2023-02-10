@@ -65,7 +65,7 @@ const Timer = () => {
     setTempHour(0);
     setTempMinute(0);
     setTempSecond(0);
-        inputHourRef.current.value = "";
+    inputHourRef.current.value = "";
     inputMinuteRef.current.value = "";
     inputSecondRef.current.value = "";
   };
@@ -85,7 +85,7 @@ const Timer = () => {
 
 
 
-  const handleClick = () => {
+    const handleClick = () => {
     setTimerActive(!timerActive);
   };
 
