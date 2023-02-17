@@ -8,7 +8,7 @@
     "preview": "vite preview",
     "build": "vite build",
     "dev": "vite serve",
-    "start": "set NODE_ENV=development&webpack-dev-server --open",
+    "start": "vite --open",
     "lint": "eslint --ext .ts,.tsx src",
     "lint:fix": "eslint --ext .ts,.tsx src --fix",
     "prettier:fix": "prettier --write src/"
@@ -51,6 +51,7 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router": "^6.3.0",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^6.3.0",
+    "use-sound": "^4.0.1"
   }
 }
