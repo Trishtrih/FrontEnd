@@ -3,21 +3,22 @@ import useSound from "use-sound";
 import timerEndSound from "../../sound/TimerEndSound.mp3";
 const Timer = () => {
   const [timerEnd] = useSound(timerEndSound);
-  const [[activeHour, activeMinute, activeSecond], setActiveTime] = useState([
-    0, 0, 10,
-  ]);
-  const [[nextHour, nextMinute, nextSecond], setNextTime] = useState([0, 0, 5]);
-  const [[tempHour, tempMinute, tempSecond], setTempTime] = useState([0, 0, 0]);
+  const [[activeHour, activeMinute, activeSecond], setActiveTime] = useState<
+    Array<number>
+  >([0, 0, 10]);
+  const [[tempHour, tempMinute, tempSecond], setTempTime] = useState<
+    Array<number>
+  >([0, 0, 0]);
   const [[saveJobHour, saveJobMinute, saveJobSecond], setSaveJobTime] =
-    useState([0, 0, 10]);
+    useState<Array<number>>([0, 0, 10]);
   const [[saveRelaxHour, saveRelaxMinute, saveRelaxSecond], setSaveRelaxTime] =
-    useState([0, 0, 5]);
-  const inputHourRef = useRef();
-  const inputMinuteRef = useRef();
-  const inputSecondRef = useRef();
+    useState<Array<number>>([0, 0, 5]);
+  const inputHourRef = useRef<HTMLInputElement>(null);
+  const inputMinuteRef = useRef<HTMLInputElement>(null);
+  const inputSecondRef = useRef<HTMLInputElement>(null);
 
-  const [timerActive, setTimerActive] = useState(false);
-  const [jobOrRelax, setJobOrRelax] = useState(true);
+  const [timerActive, setTimerActive] = useState<boolean>(false);
+  const [jobOrRelax, setJobOrRelax] = useState<boolean>(true);
 
   useEffect(() => {
     if (timerActive) {
@@ -33,11 +34,11 @@ const Timer = () => {
     if (activeHour === 0 && activeMinute === 0 && activeSecond === 0) {
       if (jobOrRelax) {
         setActiveTime([saveRelaxHour, saveRelaxMinute, saveRelaxSecond]);
-        setNextTime([saveJobHour, saveJobMinute, saveJobSecond]);
+
         timerEnd();
       } else {
         setActiveTime([saveJobHour, saveJobMinute, saveJobSecond]);
-        setNextTime([saveRelaxHour, saveRelaxMinute, saveRelaxSecond]);
+
         timerEnd();
       }
       setJobOrRelax(!jobOrRelax);
@@ -50,56 +51,72 @@ const Timer = () => {
     }
   };
 
-  const hourChange = (event: any) => {
+  const hourChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTempTime([
-      Math.abs(event.target.value) < 60 ? Math.abs(event.target.value) : 59,
+      Math.abs(Number(event.target.value)) < 60
+        ? Math.abs(Number(event.target.value))
+        : 59,
       tempMinute,
       tempSecond,
     ]);
   };
 
-  const minuteChange = (event: any) => {
+  const minuteChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTempTime([
       tempHour,
-      Math.abs(event.target.value) < 60 ? Math.abs(event.target.value) : 59,
+      Math.abs(Number(event.target.value)) < 60
+        ? Math.abs(Number(event.target.value))
+        : 59,
       tempSecond,
     ]);
   };
 
-  const secondChange = (event: any) => {
+  const secondChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTempTime([
       tempHour,
       tempMinute,
-      Math.abs(event.target.value) < 60 ? Math.abs(event.target.value) : 59,
+      Math.abs(Number(event.target.value)) < 60
+        ? Math.abs(Number(event.target.value))
+        : 59,
     ]);
   };
 
-  const setActiveTimer = () => {
-    setActiveTime([tempHour, tempMinute, tempSecond]);
-    setSaveJobTime([tempHour, tempMinute, tempSecond]);
-    setTempTime([0, 0, 0]);
-    inputHourRef.current.value = "";
-    inputMinuteRef.current.value = "";
-    inputSecondRef.current.value = "";
-  };
+  const setTimer = (phaseWhileButtonPress: boolean) => {
+    if (jobOrRelax == phaseWhileButtonPress) {
+      setActiveTime([tempHour, tempMinute, tempSecond]);
+    }
 
-  const setRelaxTimer = () => {
-    setNextTime([tempHour, tempMinute, tempSecond]);
-    setSaveRelaxTime([tempHour, tempMinute, tempSecond]);
+    phaseWhileButtonPress
+      ? setSaveJobTime([tempHour, tempMinute, tempSecond])
+      : setSaveRelaxTime([tempHour, tempMinute, tempSecond]);
+
     setTempTime([0, 0, 0]);
-    inputHourRef.current.value = "";
-    inputMinuteRef.current.value = "";
-    inputSecondRef.current.value = "";
+    if (
+      inputHourRef.current != null &&
+      inputMinuteRef.current != null &&
+      inputSecondRef.current != null
+    ) {
+      inputHourRef.current.value = "";
+      inputMinuteRef.current.value = "";
+      inputSecondRef.current.value = "";
+    }
   };
 
   const handleClick = () => {
-    setTimerActive(!timerActive);
+    if (
+      JSON.stringify([saveJobHour, saveJobMinute, saveJobSecond]) !=
+        JSON.stringify([0, 0, 0]) &&
+      JSON.stringify([saveRelaxHour, saveRelaxMinute, saveRelaxSecond]) !=
+        JSON.stringify([0, 0, 0])
+    ) {
+      setTimerActive(!timerActive);
+    }
   };
 
   const reset = () => {
+    setTimerActive(false);
     setActiveTime([0, 0, 0]);
     setSaveJobTime([0, 0, 0]);
-    setNextTime([0, 0, 0]);
     setSaveRelaxTime([0, 0, 0]);
   };
 
@@ -118,9 +135,13 @@ const Timer = () => {
           {jobOrRelax ? "Relax Time !" : "Job Time !"}
         </p>
         <p className="Timer">
-          {nextHour.toString().padStart(2, "0")} :{" "}
-          {nextMinute.toString().padStart(2, "0")} :{" "}
-          {nextSecond.toString().padStart(2, "0")}
+          {jobOrRelax
+            ? `${saveRelaxHour.toString().padStart(2, "0")} : 
+          ${saveRelaxMinute.toString().padStart(2, "0")} : 
+          ${saveRelaxSecond.toString().padStart(2, "0")}`
+            : `${saveJobHour.toString().padStart(2, "0")} : 
+          ${saveJobMinute.toString().padStart(2, "0")} : 
+          ${saveJobSecond.toString().padStart(2, "0")}`}
         </p>
       </div>
 
@@ -153,11 +174,11 @@ const Timer = () => {
         </div>
 
         <div className="Buttons">
-          <button className="Button" onClick={setActiveTimer}>
+          <button className="Button" onClick={() => setTimer(true)}>
             {" "}
             Set Job Time
           </button>
-          <button className="Button" onClick={setRelaxTimer}>
+          <button className="Button" onClick={() => setTimer(false)}>
             {" "}
             Set Relax Time
           </button>
