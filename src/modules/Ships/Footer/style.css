@@ -1,0 +1,21 @@
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #133D8D;
+    padding: 130px 0 70px;
+    gap:24px;
+}
+
+.footer-colum{
+    display: flex;
+    flex-direction: column;
+    color: #FFFFFF;
+    width:306px;
+    gap: 15px;
+}
+
+.footer-colum a{
+    text-decoration: none;
+    color: white;
+}

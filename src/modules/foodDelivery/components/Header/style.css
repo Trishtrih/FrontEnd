@@ -1,0 +1,10 @@
+.Header {
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  background-color: violet;
+  padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+

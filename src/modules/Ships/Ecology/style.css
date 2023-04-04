@@ -1,0 +1,92 @@
+.ecology-main{
+    height: 830px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.ecology-card{
+    width: 1076px;
+    height: 530px;
+    background: rgba(19, 61, 141, 0.15);
+
+    display: flex;
+    gap:35px;
+    align-items: center;
+
+}
+
+
+
+.ecology-card img{
+    width: 480px;
+    height: 410px;
+    margin-right: 60px;
+
+
+}
+
+.ecology-card ul{
+
+
+}
+
+.ecology-card li{
+    width: 387px;
+    list-style-type: square;
+    color:#BD0007;
+    margin-left: 39px;
+    padding-left: 21px;
+    margin-bottom: 1em;
+
+}
+
+.ecology-card li span{
+    width: 387px;
+
+    font-family: 'HelveticaNeueCyr', sans-serif ;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color:#333333;
+}
+
+.ecology-card h3{
+    width: 436px;
+    height: 25px;
+    margin-left: 60px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 140%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #333333;
+}
+
+.ecology-card div div{
+    width: 157px;
+    height: 31px;
+    margin-left: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    background: #133D8D;
+
+}
+
+.ecology-card div div a{
+    width: 133px;
+    height: 18px;
+    font-style: normal;
+    font-weight: 550;
+    font-size: 13px;
+    line-height: 140%;
+    color: #FFFFFF;
+    opacity: 0.75;
+}

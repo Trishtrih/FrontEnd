@@ -1,7 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import useSound from "use-sound";
-import timerEndSound from "../../sound/TimerEndSound.mp3";
-const Timer = () => {
+import "./style.css";
+import timerEndSound from "../../../../sound/TimerEndSound.mp3";
+import TimeOutputFormmating from "../helper/timeOutputFormmating";
+import InputTime from "../helper/inputTime";
+import CurrentStatus from "../helper/currentStatus";
+import NextTime from "../helper/nextTime";
+
+const Pomodoro = () => {
   const [timerEnd] = useSound(timerEndSound);
   const [[activeHour, activeMinute, activeSecond], setActiveTime] = useState<
     Array<number>
@@ -51,34 +57,16 @@ const Timer = () => {
     }
   };
 
-  const hourChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setTempTime([
-      Math.abs(Number(event.target.value)) < 60
-        ? Math.abs(Number(event.target.value))
-        : 59,
-      tempMinute,
-      tempSecond,
-    ]);
+  const handleHourChange = (inputHour: number) => {
+    setTempTime([inputHour, tempMinute, tempSecond]);
   };
 
-  const minuteChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setTempTime([
-      tempHour,
-      Math.abs(Number(event.target.value)) < 60
-        ? Math.abs(Number(event.target.value))
-        : 59,
-      tempSecond,
-    ]);
+  const handleMinuteChange = (inputMinute: number) => {
+    setTempTime([tempHour, inputMinute, tempSecond]);
   };
 
-  const secondChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setTempTime([
-      tempHour,
-      tempMinute,
-      Math.abs(Number(event.target.value)) < 60
-        ? Math.abs(Number(event.target.value))
-        : 59,
-    ]);
+  const handleSecondChange = (inputSecond: number) => {
+    setTempTime([tempHour, tempMinute, inputSecond]);
   };
 
   const setTimer = (phaseWhileButtonPress: boolean) => {
@@ -92,9 +80,9 @@ const Timer = () => {
 
     setTempTime([0, 0, 0]);
     if (
-      inputHourRef.current != null &&
-      inputMinuteRef.current != null &&
-      inputSecondRef.current != null
+      inputHourRef.current &&
+      inputMinuteRef.current &&
+      inputSecondRef.current
     ) {
       inputHourRef.current.value = "";
       inputMinuteRef.current.value = "";
@@ -121,56 +109,32 @@ const Timer = () => {
   };
 
   return (
-    <div>
-      <div className="Timers">
-        <p className={"CurrentStatus"}>
-          {jobOrRelax ? "Job Time !" : "Relax Time !"}
-        </p>
-        <p className="Timer">
-          {activeHour.toString().padStart(2, "0")} :{" "}
-          {activeMinute.toString().padStart(2, "0")} :{" "}
-          {activeSecond.toString().padStart(2, "0")}
-        </p>
-        <p className={"CurrentStatus"}>
-          {jobOrRelax ? "Relax Time !" : "Job Time !"}
-        </p>
-        <p className="Timer">
-          {jobOrRelax
-            ? `${saveRelaxHour.toString().padStart(2, "0")} : 
-          ${saveRelaxMinute.toString().padStart(2, "0")} : 
-          ${saveRelaxSecond.toString().padStart(2, "0")}`
-            : `${saveJobHour.toString().padStart(2, "0")} : 
-          ${saveJobMinute.toString().padStart(2, "0")} : 
-          ${saveJobSecond.toString().padStart(2, "0")}`}
-        </p>
+    <div className={"PomodoroApp"}>
+      <div className={"Timers"}>
+        <CurrentStatus jobOrRelax={jobOrRelax} />
+
+        <TimeOutputFormmating
+          hour={activeHour}
+          minute={activeMinute}
+          second={activeSecond}
+        />
+        <CurrentStatus jobOrRelax={!jobOrRelax} />
+        <NextTime
+          jobOrRelax={jobOrRelax}
+          saveRelaxHour={saveRelaxHour}
+          saveRelaxMinute={saveRelaxMinute}
+          saveRelaxSecond={saveRelaxSecond}
+          saveJobHour={saveJobHour}
+          saveJobMinute={saveJobMinute}
+          saveJobSecond={saveJobSecond}
+        />
       </div>
 
       <div>
         <div className="Inputs">
-          <input
-            type={"number"}
-            min={0}
-            max={59}
-            ref={inputHourRef}
-            className="Input"
-            onChange={hourChange}
-          />
-          <input
-            type={"number"}
-            min={0}
-            max={59}
-            ref={inputMinuteRef}
-            className="Input"
-            onChange={minuteChange}
-          />
-          <input
-            type={"number"}
-            min={0}
-            max={59}
-            ref={inputSecondRef}
-            className="Input"
-            onChange={secondChange}
-          />
+          <InputTime onChange={handleHourChange} inputref={inputHourRef} />
+          <InputTime onChange={handleMinuteChange} inputref={inputMinuteRef} />
+          <InputTime onChange={handleSecondChange} inputref={inputSecondRef} />
         </div>
 
         <div className="Buttons">
@@ -193,4 +157,4 @@ const Timer = () => {
     </div>
   );
 };
-export default Timer;
+export default Pomodoro;

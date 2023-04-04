@@ -14,11 +14,7 @@
   flex-wrap: nowrap;
   padding: 15px;
 }
-.Input {
-  width: 100px;
-  height: 15px;
-  border: 0;
-}
+
 
 .Buttons {
   display: flex;
@@ -36,19 +32,7 @@
 .Timers {
   display: flex;
   flex-direction: column;
- justify-content: space-evenly;
+  justify-content: center;
 }
 
-.Timer {
-  margin-left: auto;
-  margin-right: auto;
-  color: white;
-  font-size: 40px;
-}
 
-.CurrentStatus {
-    margin-left: auto;
-    margin-right: auto;
-    color: white;
-    font-size: 20px;
-}

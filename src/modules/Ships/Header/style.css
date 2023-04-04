@@ -1,0 +1,47 @@
+.ships_header{
+    width: 1297px;
+    height: 130px;
+
+    align-items: flex-start;
+    margin-left: 312px;
+    padding: 0;
+    gap: 30px;
+
+}
+.header_navigation{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 107px;
+    border-top: 2px solid white;
+}
+.header_info{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+
+}
+
+.header_info a{
+    font-style: normal;
+    font-weight: 550;
+    font-size: 14px;
+    line-height: 140%;
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.header_navigation a{
+    text-decoration: none;
+    margin-top: 23px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: white;
+
+}

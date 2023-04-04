@@ -1,0 +1,193 @@
+.ships_main {
+  background-image: url("images/first_screen_background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 900px;
+
+}
+h1{
+  width: 636px;
+  height: 168px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 60px;
+  line-height: 84px;
+  color: #FFFFFF;
+}
+h3 {
+  width: 456px;
+  height: 20px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 140%;
+
+  color: white;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.tanker-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 35px 35px;
+  gap: 25px;
+
+  position: absolute;
+  width: 526px;
+  height: 235px;
+  left: 1082px;
+  top: 565px;
+
+  background: rgba(51, 51, 51, 0.3);
+}
+
+.ships_parameters {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  gap: 76px;
+
+  width: 456px;
+  height: 125px;
+}
+
+.ships_parameter {
+  width: 135px;
+  height: 20px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 140%;
+  color: #ffffff;
+}
+.value_ships_parameter{
+  width: 70px;
+  height: 20px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 140%;
+  color: #FFFFFF;
+}
+
+.list-ships-parameters{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    gap: 15px;
+
+    width: 220px;
+    height: 125px;
+}
+.position-list-ships-parameters{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+  gap: 15px;
+
+  width: 220px;
+  height: 20px;
+}
+.miniShip {
+  width: 160px;
+  height: 60px;
+}
+.firstScreen_switch_buttons{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0;
+  gap: 20px;
+
+  position: absolute;
+  width: 140px;
+  height: 60px;
+  left: 312px;
+  top: 740px;
+}
+.switch_button{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  gap: 10px;
+  border: none;
+  width: 60px;
+  height: 60px;
+  background: #133D8D;
+}
+
+.vector_left{
+  width: 30px;
+  height: 30px;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+  background: url('https://api.iconify.design/ic/baseline-keyboard-arrow-right.svg?color=white') no-repeat center center / contain;
+}
+
+.vector_right{
+  width: 30px;
+  height: 30px;
+  background: url('https://api.iconify.design/ic/baseline-keyboard-arrow-right.svg?color=white') no-repeat center center / contain;
+}
+
+.more_button{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 30px 14px;
+  gap: 10px;
+  color: white;
+  width: 170px;
+  height: 51px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 140%;
+  /* or 22px */
+  border: none;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: #BD0007;
+}
+
+.more-about-ship{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 50px;
+
+  position: absolute;
+  width: 636px;
+  height: 359px;
+  left: 312px;
+  top: 250px;
+}
+
+.latina_text{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0 0 0 30px;
+
+  width: 416px;
+  height: 60px;
+
+  font-style: normal;
+  font-weight: 550;
+  font-size: 14px;
+  line-height: 140%;
+  border-left: 2px solid #FFFFFF;
+  /* white */
+  color: #FFFFFF;
+
+}

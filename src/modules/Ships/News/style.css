@@ -1,0 +1,128 @@
+.news{
+    height: 777px;
+    width: auto;
+}
+.news-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    gap: 100px;
+
+    width: 1296px;
+    height: 480px;
+    margin-left: 312px;
+    margin-top: 137px;
+
+}
+.news-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+
+    width: 1296px;
+    height: 50px;
+
+}
+
+.news-header h2{
+    color: #333333;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    letter-spacing: 0.05em;
+}
+
+
+
+.news-header a{
+    color: #133D8D;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+
+
+}
+
+.news-posts{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0;
+    gap: 24px;
+
+    width: 1296px;
+    height: 330px;
+
+}
+
+.news-post{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 306px;
+    height: 330px;
+    background-size: cover;
+    background-image: url("images/newsBackground.png");
+}
+
+.news-date{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    height: 31px;
+    margin-left: 25px;
+    margin-top: 25px;
+    padding: 8px 12px 5px;
+    background-color:#BD0007 ;
+
+}
+
+.news-date a {
+    font-style: normal;
+    font-weight: 550;
+    font-size: 13px;
+    line-height: 140%;
+    color: #FFFFFF;
+    opacity: 0.75;
+}
+
+.news-info{
+    padding: 0;
+    gap: 15px;
+    width: 252px;
+    margin-left: 25px;
+    margin-bottom: 25px;
+
+}
+
+.news-info h2{
+    width: 252px;
+
+    font-style: normal;
+    font-weight: 550;
+    font-size: 16px;
+    line-height: 140%;
+
+    color: #FFFFFF;
+}
+
+.news-info a{
+    width: 252px;
+    height: 60px;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #FFFFFF;
+
+    opacity: 0.75;
+}
+
