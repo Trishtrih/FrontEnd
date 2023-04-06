@@ -99,8 +99,7 @@ const GameLive = () => {
       <button onClick={startSimulation}>
         {simulationActive ? "Stop" : "Start"}
       </button>
-      <button onClick={nextStep}>next step</button>
-      <button>reset</button>
+      <button onClick={nextStep}>Next step</button>
       <div
         className={"game-field"}
         style={{
