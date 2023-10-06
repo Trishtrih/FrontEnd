@@ -5,7 +5,7 @@
   height: 900px;
 
 }
-h1{
+.more-about-ship h1{
   width: 636px;
   height: 168px;
   font-style: normal;
@@ -14,7 +14,7 @@ h1{
   line-height: 84px;
   color: #FFFFFF;
 }
-h3 {
+.tanker-description h3 {
   width: 456px;
   height: 20px;
   font-style: normal;

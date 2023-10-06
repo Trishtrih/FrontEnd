@@ -1,0 +1,17 @@
+.toDoList{
+    margin: 30px 0 0 30px;
+    width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px #0000001a;
+    overflow: hidden;
+}
+
+.toDoList-top{
+    background: #04395EFF;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 28px;
+    font-weight: 500;
+    border-radius: 5px;
+    margin: 0 0 10px;
+}

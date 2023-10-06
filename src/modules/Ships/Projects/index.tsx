@@ -31,25 +31,33 @@ const Projects = () => {
         <div className="projects-info">
           <div>
             <div className="projects-block-info">
-              <a>130 000</a>
-              <a>тонн</a>
+              <div>
+                <a>130 000</a>
+                <a>тонн</a>
+              </div>
               <a>вес бетонного основания платформы</a>
             </div>
             <div className="projects-block-info">
-              <a>3,3</a>
-              <a>узла</a>
+              <div>
+                <a>3,3</a>
+                <a>узла</a>
+              </div>
               <a>составила скорость буксировки платформы </a>
             </div>
           </div>
           <div>
             <div className="projects-block-info">
-              <a>15</a>
-              <a>судов</a>
+              <div>
+                <a>15</a>
+                <a>судов</a>
+              </div>
               <a>проектная команда</a>
             </div>
             <div className="projects-block-info">
-              <a>41</a>
-              <a>метр</a>
+              <div>
+                <a>41</a>
+                <a>метр</a>
+              </div>
               <a>высота каждой колонны</a>
             </div>
           </div>

@@ -1,6 +1,14 @@
 import React from "react";
 import "./timeOutputFormatting.css";
-const TimeOutputFormmating = ({ hour, minute, second }) => {
+const TimeOutputFormating = ({
+  hour,
+  minute,
+  second,
+}: {
+  hour: number;
+  minute: number;
+  second: number;
+}) => {
   return (
     <p className={"Timer"}>
       {hour.toString().padStart(2, "0")} {" : "}{" "}
@@ -10,4 +18,4 @@ const TimeOutputFormmating = ({ hour, minute, second }) => {
   );
 };
 
-export default TimeOutputFormmating;
+export default TimeOutputFormating;

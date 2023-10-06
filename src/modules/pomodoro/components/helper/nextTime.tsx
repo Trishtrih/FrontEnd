@@ -9,6 +9,14 @@ const NextTime = ({
   saveJobHour,
   saveJobMinute,
   saveJobSecond,
+}: {
+  jobOrRelax: boolean;
+  saveRelaxHour: number;
+  saveRelaxMinute: number;
+  saveRelaxSecond: number;
+  saveJobHour: number;
+  saveJobMinute: number;
+  saveJobSecond: number;
 }) => {
   return jobOrRelax ? (
     <TimeOutputFormmating

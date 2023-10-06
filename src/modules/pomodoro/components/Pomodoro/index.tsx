@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import useSound from "use-sound";
 import "./style.css";
 import timerEndSound from "../../../../sound/TimerEndSound.mp3";
-import TimeOutputFormmating from "../helper/timeOutputFormmating";
+import TimeOutputFormatting from "../helper/timeOutputFormmating";
 import InputTime from "../helper/inputTime";
 import CurrentStatus from "../helper/currentStatus";
 import NextTime from "../helper/nextTime";
@@ -113,7 +113,7 @@ const Pomodoro = () => {
       <div className={"Timers"}>
         <CurrentStatus jobOrRelax={jobOrRelax} />
 
-        <TimeOutputFormmating
+        <TimeOutputFormatting
           hour={activeHour}
           minute={activeMinute}
           second={activeSecond}
@@ -132,9 +132,9 @@ const Pomodoro = () => {
 
       <div>
         <div className="Inputs">
-          <InputTime onChange={handleHourChange} inputref={inputHourRef} />
-          <InputTime onChange={handleMinuteChange} inputref={inputMinuteRef} />
-          <InputTime onChange={handleSecondChange} inputref={inputSecondRef} />
+          <InputTime onChange={handleHourChange} inputRef={inputHourRef} />
+          <InputTime onChange={handleMinuteChange} inputRef={inputMinuteRef} />
+          <InputTime onChange={handleSecondChange} inputRef={inputSecondRef} />
         </div>
 
         <div className="Buttons">
