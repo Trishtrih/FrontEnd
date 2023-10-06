@@ -1,0 +1,15 @@
+
+
+
+.detailed-information{
+    margin-left:30px ;
+}
+
+.detailed-information-block{
+    display: flex;
+    flex-direction: column;
+}
+
+.detailed-information-block span{
+    font-weight: bold;
+}

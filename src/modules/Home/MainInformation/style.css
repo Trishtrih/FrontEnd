@@ -1,0 +1,72 @@
+.main-information{
+    background-color: #133D8D;
+    width: 250px;
+    min-height: 100vh;
+}
+
+.photo{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.contact-information{
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-information a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    font-size: 14px;
+    margin: 10px 30px 10px;
+}
+
+.bagel{
+    width: 7px;
+    height: 7px;
+    margin-right: 5px;
+    border-style: solid;
+    border-width: 4px;
+    border-color: white;
+    border-radius: 50%;
+}
+
+.work-information{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.work-information div{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.work-information a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    font-size: 14px;
+    padding: 2px 10px 2px;
+}
+
+.skill-list{
+    list-style: none;
+    padding-left: 25px;
+
+}
+
+.skill-list li{
+    color: white;
+
+}
+
+.skill-list li:before{
+    color: white;
+    content:  "-";
+    position: relative;
+    left: -10px;
+
+}

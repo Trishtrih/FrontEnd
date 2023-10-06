@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/Trishtrih/FrontEnd#readme",
   "devDependencies": {
+    "@redux-devtools/core": "^3.13.1",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@typescript-eslint/eslint-plugin": "^5.51.0",
@@ -48,11 +49,14 @@
     "vite": "^4.1.1"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
     "immer": "^9.0.21",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-redux": "^8.0.5",
     "react-router": "^6.3.0",
     "react-router-dom": "^6.3.0",
+    "redux": "^4.2.1",
     "use-sound": "^4.0.1"
   }
 }

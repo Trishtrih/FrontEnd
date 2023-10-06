@@ -2,6 +2,9 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/App.tsx" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/modules/Home/DetailedInformation/index.tsx" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/modules/Home/Main/index.tsx" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/modules/Home/MainInformation/index.tsx" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/modules/Ships/Ecology/index.tsx" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/modules/Ships/FirstScreen/index.tsx" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/modules/Ships/Footer/index.tsx" charset="UTF-8" />
@@ -15,6 +18,10 @@
     <file url="file://$PROJECT_DIR$/src/modules/foodDelivery/components/Menu/index.tsx" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/modules/foodDelivery/components/MenuCategories/Burgers/index.tsx" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/modules/foodDelivery/components/MenuItem/index.tsx" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/modules/toDoList/components/Task/Task.tsx" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/modules/toDoList/components/TaskInput/TaskInput.tsx" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/modules/toDoList/components/ToDoList/ToDoList.tsx" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/store/toDoStore/reducer.ts" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/webpack.config.js" charset="UTF-8" />
   </component>
 </project>

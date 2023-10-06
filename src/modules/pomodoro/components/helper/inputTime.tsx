@@ -24,5 +24,4 @@ const InputTime = ({ onChange, inputRef }: IProps) => {
   );
 };
 
-//event: React.ChangeEvent<HTMLInputElement>
 export default InputTime;

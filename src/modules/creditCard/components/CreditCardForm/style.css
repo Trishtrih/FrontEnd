@@ -1,0 +1,21 @@
+.card-form{
+
+    box-shadow: 10px 5px 5px gray;
+    background-color: white;
+    height: 570px;
+    width: 557px;
+    border-radius: 20px;
+    margin: 50px;
+}
+
+.card-form-input{
+    display: flex;
+    flex-direction: column;
+
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
